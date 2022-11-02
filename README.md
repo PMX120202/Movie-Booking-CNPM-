@@ -22,7 +22,7 @@
 </table>
 
 # How to run:
-### install yarn 
-### yarn add express
-### yarn add dotenv
-### yarn add mongoose
+- install yarn 
+- yarn add express
+- yarn add dotenv
+- yarn add mongoose
