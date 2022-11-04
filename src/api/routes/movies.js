@@ -1,33 +1,38 @@
 import express from "express";
 import {
-  countByCity,
-  countByType,
-  createHotel,
-  deleteHotel,
-  getHotel,
-  getHotelRooms,
-  getHotels,
-  updateHotel,
-} from "../controllers/hotel.js";
-import Hotel from "../models/Hotel.js";
-// import {verifyAdmin} from "../utils/verifyToken.js"
+	// countByCity,
+	// countByType,
+	// getHotel,
+	// getHotelRooms,
+	// getHotels,
+    createMovie,
+    deleteMovie,
+    updateMovie,
+    getMovie,
+    getAllMovies,
+} from "../controllers/movies.js";
+
+// import Movie from "../models/Movie.js";
+import {verifyAdmin, verifyUser} from "../utils/verify.js";
 const router = express.Router();
 
 //CREATE
-router.post("/",  createHotel);
+router.post("/", verifyAdmin, createMovie);
 
 //UPDATE
-router.put("/:id",  updateHotel);
+router.put("/:id", verifyAdmin, updateMovie);
+
 //DELETE
-router.delete("/:id",  deleteHotel);
+router.delete("/:id", verifyAdmin, deleteMovie);
+
 //GET
+router.get("/find/:id", getMovie);
 
-router.get("/find/:id", getHotel);
 //GET ALL
+router.get("/", getAllMovies);
 
-router.get("/", getHotels);
-// router.get("/countByCity", countByCity);
-// router.get("/countByType", countByType);
-// router.get("/room/:id", getHotelRooms);
+// // // router.get("/countByCity", countByCity);
+// // // router.get("/countByType", countByType);
+// // // router.get("/room/:id", getHotelRooms);
 
 export default router;

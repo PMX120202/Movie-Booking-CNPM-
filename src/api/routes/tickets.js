@@ -1,28 +1,32 @@
 import express from "express";
 import {
-  createRoom,
-  deleteRoom,
-  getRoom,
-  getRooms,
-  updateRoom,
-  updateRoomAvailability,
-} from "../controllers/room.js";
-// import { verifyAdmin } from "../utils/verifyToken.js";
+	createTicket,
+	updateTicket,
+	deleteTicket,
+	getTicket,
+	getAllTicketsOfAnUser,
+	getAllTicketsOfAMovie
+} from "../controllers/tickets.js";
+import { verifyAdmin, verifyUser } from "../utils/verify.js";
 
 const router = express.Router();
+
 //CREATE
-router.post("/:hotelid",  createRoom);//verifyAdmin,
+router.post("/:movie_id", verifyAdmin, createTicket);
 
 //UPDATE
-router.put("/availability/:id", updateRoomAvailability);
-router.put("/:id",  updateRoom);//verifyAdmin,
+router.put("/:id", verifyAdmin, updateTicket);
+
 //DELETE
-router.delete("/:id/:hotelid", deleteRoom);//verifyAdmin,
-//GET
+router.delete("/:id/:movie_id", verifyAdmin, deleteTicket);
 
-router.get("/:id", getRoom);
-//GET ALL
+// GET A TICKET
+router.get("/:id", verifyAdmin, getTicket);
 
-router.get("/", getRooms);
+// GET TICKETS OF USER
+router.get("/user/:user_id", verifyUser, getAllTicketsOfAnUser);
+
+// GET TICKETS OF MOVIE
+router.get("/movie/:movie_id", verifyAdmin, getAllTicketsOfAMovie);
 
 export default router;

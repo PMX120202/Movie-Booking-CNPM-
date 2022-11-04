@@ -47,3 +47,12 @@ export const login = async (req, res, next) => {
     next(err);
   }
 };
+
+
+export const logout = async (req, res, next) => {
+  try {
+    res.cookie('access_token', "", { maxAge: 1}).status(200).send("You have been logged out");
+  } catch (err) {
+    next(err);
+  }
+}
