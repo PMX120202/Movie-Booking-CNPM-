@@ -1,11 +1,11 @@
-import express from "express";
-import {
-  updateUser,
-  deleteUser,
-  getUser,
-  getAllUsers,
-} from "../controllers/users.js";
-import { verifyAdmin, verifyUser } from "../utils/verify.js";
+const express = require("express");
+const {
+	updateUser,
+	deleteUser,
+	getUser,
+	getAllUsers,
+} = require("../controllers/users.js");
+const { verifyAdmin, verifyUser } = require("../utils/verify.js");
 
 const router = express.Router();
 
@@ -21,4 +21,4 @@ router.get("/:id", verifyUser, getUser);
 // Get all user
 router.get("/", verifyAdmin, getAllUsers);
 
-export default router;
+module.exports = router;

@@ -1,8 +1,8 @@
-import Movie from "../models/Movie.js";
-import Ticket from "../models/Ticket.js";
+const Movie = require( "../models/Movie.js");
+const Ticket = require( "../models/Ticket.js");
 
 // Create a new movie
-export const createMovie = async (req, res, next) => {
+const createMovie = async (req, res, next) => {
 	const newMovie = new Movie(req.body);
 
 	try {
@@ -14,7 +14,7 @@ export const createMovie = async (req, res, next) => {
 };
 
 // Update a movie
-export const updateMovie = async (req, res, next) => {
+const updateMovie = async (req, res, next) => {
 	try {
 		const updatedMovie = await Movie.findByIdAndUpdate(
 			req.params.id,
@@ -28,7 +28,7 @@ export const updateMovie = async (req, res, next) => {
 };
 
 // Delete an exist movie
-export const deleteMovie = async (req, res, next) => {
+const deleteMovie = async (req, res, next) => {
 	try {
 		await Movie.findByIdAndDelete(req.params.id);
 		res.status(200).json("Movie has been deleted.");
@@ -38,7 +38,7 @@ export const deleteMovie = async (req, res, next) => {
 };
 
 // Get a movie
-export const getMovie = async (req, res, next) => {
+const getMovie = async (req, res, next) => {
 	try {
 		const movie = await Movie.findById(req.params.id);
 		res.status(200).json(movie);
@@ -48,7 +48,7 @@ export const getMovie = async (req, res, next) => {
 };
 
 // Get all movies
-export const getAllMovies = async (req, res, next) => {
+const getAllMovies = async (req, res, next) => {
 	const { min, max, ...others } = req.query;
 	try {
 		const allMovies = await Movie.find({
@@ -107,3 +107,5 @@ export const getAllMovies = async (req, res, next) => {
 //     next(err);
 //   }
 // };
+
+module.exports = { createMovie, deleteMovie, updateMovie, getMovie, getAllMovies }

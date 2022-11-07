@@ -1,11 +1,11 @@
-import Ticket from "../models/Ticket.js";
-import Movie from "../models/Movie.js";
-import { createError } from "../utils/error.js";
+const Ticket = require("../models/Ticket.js");
+const Movie = require("../models/Movie.js");
+const { createError } = require("../utils/error.js");
 
 // Create a new ticket
-export const createTicket = async (req, res, next) => {
+const createTicket = async (req, res, next) => {
 	const movieId = req.params.movie_id;
-	req.body['movie_id'] = movieId;
+	req.body["movie_id"] = movieId;
 	const newTicket = new Ticket(req.body);
 
 	try {
@@ -34,7 +34,7 @@ export const createTicket = async (req, res, next) => {
 };
 
 // Update an exist ticket
-export const updateTicket = async (req, res, next) => {
+const updateTicket = async (req, res, next) => {
 	try {
 		const updatedTicket = await Ticket.findByIdAndUpdate(
 			req.params.id,
@@ -48,7 +48,7 @@ export const updateTicket = async (req, res, next) => {
 };
 
 // Delete a ticket
-export const deleteTicket = async (req, res, next) => {
+const deleteTicket = async (req, res, next) => {
 	const movieId = req.params.movie_id;
 	try {
 		const ticket = await Ticket.findByIdAndDelete(req.params.id);
@@ -69,7 +69,7 @@ export const deleteTicket = async (req, res, next) => {
 };
 
 // Get a ticket
-export const getTicket = async (req, res, next) => {
+const getTicket = async (req, res, next) => {
 	try {
 		const ticket = await Ticket.findById(req.params.id);
 		res.status(200).json(ticket);
@@ -79,24 +79,29 @@ export const getTicket = async (req, res, next) => {
 };
 
 // Get all tickets of a movie
-export const getAllTicketsOfAMovie = async (req, res, next) => {
+const getAllTicketsOfAMovie = async (req, res, next) => {
 	const movieId = req.params.movie_id;
 	try {
-		const allTickets = await Ticket.find({movie_id: movieId}).limit(req.query.limit);
+		const allTickets = await Ticket.find({ movie_id: movieId }).limit(
+			req.query.limit
+		);
 		res.status(200).json(allTickets);
 	} catch (err) {
 		next(err);
 	}
 };
-
 
 // Get all tickets of an user
-export const getAllTicketsOfAnUser = async (req, res, next) => {
+const getAllTicketsOfAnUser = async (req, res, next) => {
 	const userId = req.params.user_id;
 	try {
-		const allTickets = await Ticket.find({user_id: userId}).limit(req.query.limit);
+		const allTickets = await Ticket.find({ user_id: userId }).limit(
+			req.query.limit
+		);
 		res.status(200).json(allTickets);
 	} catch (err) {
 		next(err);
 	}
 };
+
+module.exports = { getAllTicketsOfAnUser, getAllTicketsOfAMovie, getTicket, createTicket, deleteTicket, updateTicket }

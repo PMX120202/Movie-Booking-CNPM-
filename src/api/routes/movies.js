@@ -1,19 +1,14 @@
-import express from "express";
-import {
-	// countByCity,
-	// countByType,
-	// getHotel,
-	// getHotelRooms,
-	// getHotels,
-    createMovie,
-    deleteMovie,
-    updateMovie,
-    getMovie,
-    getAllMovies,
-} from "../controllers/movies.js";
+const express = require("express");
+const {
+	createMovie,
+	deleteMovie,
+	updateMovie,
+	getMovie,
+	getAllMovies,
+} = require("../controllers/movies.js");
 
-// import Movie from "../models/Movie.js";
-import {verifyAdmin, verifyUser} from "../utils/verify.js";
+const { verifyAdmin } = require("../utils/verify.js");
+
 const router = express.Router();
 
 //CREATE
@@ -35,4 +30,4 @@ router.get("/", getAllMovies);
 // // // router.get("/countByType", countByType);
 // // // router.get("/room/:id", getHotelRooms);
 
-export default router;
+module.exports = router;

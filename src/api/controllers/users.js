@@ -1,7 +1,7 @@
-import User from "../models/User.js";
+const User = require( "../models/User.js");
 
 // Update information for user
-export const updateUser = async (req,res,next) => {
+const updateUser = async (req,res,next) => {
   try {
     const updatedUser = await User.findByIdAndUpdate(
       req.params.id,
@@ -15,7 +15,7 @@ export const updateUser = async (req,res,next) => {
 }
 
 // Delete a user
-export const deleteUser = async (req,res,next) => {
+const deleteUser = async (req,res,next) => {
   try {
     await User.findByIdAndDelete(req.params.id);
     res.status(200).json("User has been deleted.");
@@ -25,7 +25,7 @@ export const deleteUser = async (req,res,next) => {
 }
 
 // Get a user
-export const getUser = async (req,res,next)=>{
+const getUser = async (req,res,next)=>{
   try {
     const user = await User.findById(req.params.id);
     res.status(200).json(user);
@@ -35,7 +35,7 @@ export const getUser = async (req,res,next)=>{
 }
 
 // Get all the users
-export const getAllUsers = async (req,res,next)=>{
+const getAllUsers = async (req,res,next)=>{
   try {
     const users = await User.find();
     res.status(200).json(users);
@@ -43,3 +43,5 @@ export const getAllUsers = async (req,res,next)=>{
     next(err);
   }
 }
+
+module.exports = {updateUser, getUser, getAllUsers, deleteUser};

@@ -1,13 +1,13 @@
-import express from "express";
-import {
+const express = require("express");
+const {
 	createTicket,
 	updateTicket,
 	deleteTicket,
 	getTicket,
 	getAllTicketsOfAnUser,
-	getAllTicketsOfAMovie
-} from "../controllers/tickets.js";
-import { verifyAdmin, verifyUser } from "../utils/verify.js";
+	getAllTicketsOfAMovie,
+} = require("../controllers/tickets.js");
+const { verifyAdmin, verifyUser } = require("../utils/verify.js");
 
 const router = express.Router();
 
@@ -29,4 +29,4 @@ router.get("/user/:user_id", verifyUser, getAllTicketsOfAnUser);
 // GET TICKETS OF MOVIE
 router.get("/movie/:movie_id", verifyAdmin, getAllTicketsOfAMovie);
 
-export default router;
+module.exports = router;
