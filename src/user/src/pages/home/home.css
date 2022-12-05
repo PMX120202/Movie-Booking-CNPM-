@@ -1,12 +1,12 @@
-.homeContainer{
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
+.home{
+    width: 100%;
 }
-
-.homeTitle{
-  width: 1024px;
-  font-size: 20px;
+.hfeature{
+    background-image: linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D);
+    height: 500px;
+    text-align: center;
+}
+.hfeature p{
+    margin: 0;
+    font-size: 30px;
 }

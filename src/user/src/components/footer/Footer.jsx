@@ -1,52 +1,47 @@
-import "./footer.css";
+import React from 'react'
+import "./Footer.css"
+
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <div className="fLists">
-        <ul className="fList">
-          <li className="fListItem">Countries</li>
-          <li className="fListItem">Regions</li>
-          <li className="fListItem">Cities</li>
-          <li className="fListItem">Districts</li>
-          <li className="fListItem">Airports</li>
-          <li className="fListItem">Hotels</li>
-        </ul>
-        {/* <ul className="fList">
-          <li className="fListItem">Homes </li>
-          <li className="fListItem">Apartments </li>
-          <li className="fListItem">Resorts </li>
-          <li className="fListItem">Villas</li>
-          <li className="fListItem">Hostels</li>
-          <li className="fListItem">Guest houses</li>
-        </ul>
-        <ul className="fList">
-          <li className="fListItem">Unique places to stay </li>
-          <li className="fListItem">Reviews</li>
-          <li className="fListItem">Unpacked: Travel articles </li>
-          <li className="fListItem">Travel communities </li>
-          <li className="fListItem">Seasonal and holiday deals </li>
-        </ul>
-        <ul className="fList">
-          <li className="fListItem">Car rental </li>
-          <li className="fListItem">Flight Finder</li>
-          <li className="fListItem">Restaurant reservations </li>
-          <li className="fListItem">Travel Agents </li>
-        </ul>
-        <ul className="fList">
-          <li className="fListItem">Curtomer Service</li>
-          <li className="fListItem">Partner Help</li>
-          <li className="fListItem">Careers</li>
-          <li className="fListItem">Sustainability</li>
-          <li className="fListItem">Press center</li>
-          <li className="fListItem">Safety Resource Center</li>
-          <li className="fListItem">Investor relations</li>
-          <li className="fListItem">Terms & conditions</li>
-        </ul> */}
-      </div>
-      <div className="fText">Copyright © 2022 Group1.</div>
-    </div>
-  );
-};
+    <div className="fcontainer">
+        <div className="footer">
+            <div className="fLists">
+                <ul className="fList"> 
+                    <li className="fListHeaderItems">CGV Việt Nam</li>
+                    <li className="fListItems">Giới Thiệu</li>
+                    <li className="fListItems">Tiện Ích Online</li>
+                    <li className="fListItems">Thẻ Quà Tặng</li>
+                    <li className="fListItems">Liên Hệ Quảng Cáo CGV</li>
+                </ul>
 
-export default Footer;
+                <ul className="fList"> 
+                    <li className="fListHeaderItems">Điều khoản sử dụng</li>
+                    <li className="fListItems">Điều Khoản Chung</li>
+                    <li className="fListItems">Điều Khoản Giao Dịch</li>
+                    <li className="fListItems">Chính Sách Thanh Toán</li>
+                    <li className="fListItems">Chính Sách Bảo Mật</li>
+                </ul>
+
+                <ul className="fList"> 
+                    <li className="fListHeaderItems">Kết nối với chúng tôi </li>
+                    <li className="fListItems">Điều Khoản Chung</li>
+                    <li className="fListItems">Điều Khoản Giao Dịch</li>
+                    <li className="fListItems">Chính Sách Thanh Toán</li>
+                    <li className="fListItems">Chính Sách Bảo Mật</li>
+                </ul>
+
+                <ul className="fList"> 
+                    <li className="fListHeaderItems">Chăm sóc khách hàng</li>
+
+                    <li className="fListItems">Hotline: 1900 6017</li>
+                    <li className="fListItems">Giờ làm việc: 8:00 - 22:00 (Tất cả các ngày bao gồm cả Lễ Tết)</li>
+                    <li className="fListItems">Email hỗ trợ: hoidap@cgv.vn</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  )
+}
+
+export default Footer

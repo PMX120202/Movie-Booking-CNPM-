@@ -1,13 +1,13 @@
-import axios from "axios";
-import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
-import "./login.css";
+import {AuthContext} from "../../context/AuthContext"
+import { useState,useContext } from "react"
+import { Link,useNavigate } from "react-router-dom"
+import "./Login.css"
+import axios from "axios"
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
-    username: undefined,
-    password: undefined,
+    username: "ngu123",
+    password: "12345",
   });
 
   const { loading, error, dispatch } = useContext(AuthContext);
@@ -17,12 +17,13 @@ const Login = () => {
   const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
-
+  
   const handleClick = async (e) => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("/auth/login", credentials);
+      console.log(credentials)
+      const res = await axios.post("http://localhost:8000/api/auth/login", credentials)
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
       navigate("/")
     } catch (err) {
@@ -30,31 +31,31 @@ const Login = () => {
     }
   };
 
-
-  return (
-    <div className="login">
-      <div className="lContainer">
-        <input
-          type="text"
-          placeholder="username"
-          id="username"
+  return(
+    <div className="auth-form-container">
+      <h2>Login</h2>
+      <form className="login-form" >
+          <input 
+          type="email" 
+          id="email" 
+          name="email" 
           onChange={handleChange}
-          className="lInput"
-        />
-        <input
-          type="password"
-          placeholder="password"
-          id="password"
-          onChange={handleChange}
-          className="lInput"
-        />
-        <button disabled={loading} onClick={handleClick} className="lButton">
-          Login
-        </button>
-        {error && <span>{error.message}</span>}
-      </div>
-    </div>
-  );
-};
+          placeholder="email"
+          />
+          <input  
+            type="password" 
+            id="password" 
+            ame="password" 
+            onChange={handleChange}
+            placeholder="password"
+          />
+          <button disabled={loading} onClick={handleClick} type="submit">Log In</button>
+          {error && <span>{error.message}</span>}
+      </form>
+      <Link className="link-btn" to="/Register">Don't have an account? Register here.</Link>
 
-export default Login;
+  </div>
+  )
+}
+
+export default Login
