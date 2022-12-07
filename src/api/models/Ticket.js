@@ -13,6 +13,14 @@ const TicketSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    address: {
+      type: String,
+      required: true,
+    },
+    date: {
+      type: Date,
+      required: true,
+    }
   },
   { timestamps: true }
 );
