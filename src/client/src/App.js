@@ -3,8 +3,9 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Login from "./pages/Login/Login"
+
 import "./App.css"
+import Login from "./pages/Login/Login"
 import Register from "./pages/Register/Register"
 import Movie from "./pages/Movie/Movie"
 import Home from "./pages/Home/Home"

@@ -38,6 +38,19 @@ const MovieSchema = new mongoose.Schema({
 		type: Number,
 		required: true,
 	},
+	trailer: {
+		type: String,
+		required: true,
+	},
+	author: {
+		type: String,
+		required: true,
+	},
+	cast: {
+		type: String,
+		required: true,
+	},
+
 });
 
 module.exports = mongoose.model("Movie", MovieSchema);
