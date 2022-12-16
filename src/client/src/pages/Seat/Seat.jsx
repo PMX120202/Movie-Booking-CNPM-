@@ -10,6 +10,7 @@ const Seat = () => {
     const id = location.pathname.split("/")[2]
 
     const { data, loading, error } =  useFetch(`http://localhost:8000/api/movies/find/${id}`)
+    const [isload,setIsload] = useState(false)
 
     const count = document.getElementById('count');
     const total = document.getElementById('total');
@@ -45,15 +46,14 @@ const Seat = () => {
         seat[seatbooking[i]+2].classList.toggle('occupied')
         console.log(seatbooking[i])
       }
-      
+      seatAdrs(data.address)
+      setTime(data.dates)
     }
   
     useEffect(()=>{
       setupSeat()
-      seatAdrs(data.address)
-      setTime(data.dates)
       console.log("loa")
-    })
+    },[data])
     
     const handleClick = e => {
       if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
@@ -67,12 +67,36 @@ const Seat = () => {
       var d = new Date(e)
       return d.toLocaleString('es-us')
     }
+
+    const createTicket = async (s,c,t,mid,uid) => {
+      e.preventDefault()
+      const movie_id = mid
+      const customer_id =uid
+      const seat_number = s
+      const cinema_complex = c
+      const movie_show_time = t
+      const total_price = 90000
+      const createdAt = new Date()
+      const updatedAt = new Date()
+      try {
+        console.log({firstName,lastName,username,email,password})
+        const res = await axios.post(`http://localhost:8000/api/tickets/${uid}`,{movie_id,customer_id,seat_number,cinema_complex,movie_show_time,total_price,createdAt,updatedAt})
+        console.log(res)
+        setSuccess(true)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+
     const handlePayment=()=>{
       var splitted = listseat.textContent.split`,`.map(x=>+x)
       SetLseat(splitted)
       console.log(splitted)
       console.log(cinema)
       console.log(gettime)
+      for (let i in lseat){
+        createTicket(lseat[i],cinema,gettime,id,)
+      }
     }
 
   //==================================================
@@ -81,8 +105,7 @@ const Seat = () => {
     {loading ? (
       console.log("loading api")
     ) : (
-      <div className="movie-container" >
-        
+      <div className="movie-container"  >
         <label htmlFor="moviename">{data.name}</label>
         
         <ul className="showcase">
