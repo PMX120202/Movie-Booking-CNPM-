@@ -1,5 +1,5 @@
 import useFetch from "../../hooks/useFetch"
-import "./Seat.css"
+import "./seat.css"
 import React, {useContext, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import { useState } from "react";
