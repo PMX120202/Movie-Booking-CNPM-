@@ -1,4 +1,4 @@
-import "./Movie.css"
+import "./movie.css"
 
 import Navbarz from "../../components/Navbarz/Navbarz"
 import Header from "../../components/Header/Header"
