@@ -4,6 +4,7 @@ import React, {useContext, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import { useState } from "react";
 import { AuthContext } from '../../context/AuthContext'
+import axios from "axios";
 
 const Seat = () => {
     const location = useLocation()
@@ -69,7 +70,6 @@ const Seat = () => {
     }
 
     const createTicket = async (s,c,t,mid,uid) => {
-      e.preventDefault()
       const movie_id = mid
       const customer_id =uid
       const seat_number = s
@@ -79,10 +79,10 @@ const Seat = () => {
       const createdAt = new Date()
       const updatedAt = new Date()
       try {
-        console.log({firstName,lastName,username,email,password})
+        // console.log({firstName,lastName,username,email,password})
         const res = await axios.post(`http://localhost:8000/api/tickets/${uid}`,{movie_id,customer_id,seat_number,cinema_complex,movie_show_time,total_price,createdAt,updatedAt})
         console.log(res)
-        setSuccess(true)
+
       } catch (err) {
         console.log(err)
       }

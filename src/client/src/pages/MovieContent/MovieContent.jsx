@@ -1,5 +1,5 @@
-import Footer from "../../components/Footer/Footer"
-import Header from "../../components/Header/Header"
+import Footer from "../../components/footer/Footer"
+import Header from "../../components/header/Header"
 import YtbEmbed from "../../components/YtbEmbed/YtbEmbed"
 import Navbarz from "../../components/Navbarz/Navbarz"
 
