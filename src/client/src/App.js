@@ -4,10 +4,10 @@ import {
   Route,
 } from "react-router-dom";
 import "./App.css"
-import Login from "./pages/Login/Login"
+import Login from "./pages/Login/login"
 import Register from "./pages/Register/Register"
-import Movie from "./pages/Movie/Movie"
-import Home from "./pages/Home/Home"
+import Movie from "./pages/Movie/movie"
+import Home from "./pages/Home/home"
 import MovieContent from "./pages/MovieContent/MovieContent"
 import Seat from "./pages/Seat/Seat"
 import Account from "./pages/Account/Account";

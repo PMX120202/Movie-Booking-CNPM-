@@ -1,0 +1,12 @@
+.home{
+    width: 100%;
+}
+.hfeature{
+    background-image: linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D);
+    height: 500px;
+    text-align: center;
+}
+.hfeature p{
+    margin: 0;
+    font-size: 30px;
+}
