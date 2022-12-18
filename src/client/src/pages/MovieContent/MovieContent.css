@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .contentt{
     background-color:#FFFFFF;
@@ -19,8 +19,8 @@
     background-color: whitesmoke;
     margin: 20px;
     display:flex;
-    justify-content:center; /* horizontally center */
-    align-items:center;    /* vertically center */
+    justify-content:center; /* horizontally center
+    align-items:center;
     border-style: outset;
 }
 .Img-movie {
@@ -95,4 +95,4 @@
     color: #222;
     font-size: 20px;
     line-height: 18px;
-}
+} */

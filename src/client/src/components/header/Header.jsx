@@ -7,29 +7,38 @@ const Header = () => {
 		<div className="header">
 			<div className="headerContainer">
 				<div className="headerList">
+					
+
+					<div className="headerListItems">
+						<span>Phim đang chiếu</span>
+					</div>
+
+					<div className="headerListItems">
+						<span>Ưu đãi</span>
+					</div>
+
 					<div className="headerListItems active">
 						<span>
 							<Link
-								className="btn"
+								className="book-ticket-btn"
 								to="/Movie/MovieShowing"
-								style={{ color: "white" }}
+								// style={{ color: "white" }}
 							>
-								BUY TICKETS
+								Mua vé
 							</Link>
 						</span>
 					</div>
 
 					<div className="headerListItems">
-						<span>Movie</span>
+						<span>Khám phá</span>
 					</div>
 
 					<div className="headerListItems">
-						<span>Promotion</span>
+						<span>Về chúng tôi</span>
 					</div>
 
-					<div className="headerListItems">
-						<span>Cinema</span>
-					</div>
+					
+
 				</div>
 			</div>
 		</div>

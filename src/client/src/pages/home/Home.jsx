@@ -11,7 +11,6 @@ const Home = () => {
 			<Navbar />
 			<Header />
 			<div className="hfeature">
-				<p>This is feature.</p>
 			</div>
 			<Footer />
 		</div>

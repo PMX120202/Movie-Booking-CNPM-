@@ -12,7 +12,13 @@ const Navbar = () => {
 					to="/"
 					style={{ color: "inherit", textDecoration: "none" }}
 				>
-					<span className="logo">NGU Cinema</span>
+					{/* <span className="logo">Fox Cinema</span> */}
+					<img
+						src={process.env.PUBLIC_URL + "/icon.png"}
+						alt="Logo"
+						width="200px"
+						class="logo"
+					/>
 				</Link>
 				<div className="navItems">
 					{/* <button className="navButton" style={{ color: "black" }}>
@@ -22,10 +28,18 @@ const Navbar = () => {
 						Login
 					</button> */}
 
-					<Link className="navButton" style={{ color: "black", backgroundColor: "white" }} to="/register">
+					<Link
+						className="btn btn-light mx-2"
+						style={{ color: "black", backgroundColor: "white" }}
+						to="/register"
+					>
 						Register
 					</Link>
-					<Link className="navButton" style={{ color: "black", backgroundColor: "white" }} to="/login">
+					<Link
+						className="btn btn-light mx-2"
+						style={{ color: "black", backgroundColor: "white" }}
+						to="/login"
+					>
 						Login
 					</Link>
 				</div>
