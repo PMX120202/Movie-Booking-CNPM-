@@ -3,7 +3,7 @@ import Header from "../../components/header/Header";
 import YtbEmbed from "../../components/YtbEmbed/YtbEmbed";
 import Navbar from "../../components/Navbar/Navbar";
 
-import "./MovieContent.css";
+import "./movieContent.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import axios from "axios";

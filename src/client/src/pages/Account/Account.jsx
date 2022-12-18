@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import './Account.css'
+import './account.css'
 
 const Account = () => {
     const [page,setPage] = useState("1")
