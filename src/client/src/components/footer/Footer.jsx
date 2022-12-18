@@ -26,10 +26,10 @@ const Footer = () => {
 						<li className="fListHeaderItems">
 							Kết nối với chúng tôi{" "}
 						</li>
-						<li className="fListItems">Điều Khoản Chung</li>
-						<li className="fListItems">Điều Khoản Giao Dịch</li>
-						<li className="fListItems">Chính Sách Thanh Toán</li>
-						<li className="fListItems">Chính Sách Bảo Mật</li>
+						<li className="fListItems">Facebook</li>
+						<li className="fListItems">Instagram</li>
+						<li className="fListItems">Mail</li>
+						<li className="fListItems">Twitter</li>
 					</ul>
 
 					<ul className="fList">

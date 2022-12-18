@@ -31,3 +31,7 @@
     color: white;
     text-decoration: none;
 }
+
+.navContainer span {
+    color: red;
+}

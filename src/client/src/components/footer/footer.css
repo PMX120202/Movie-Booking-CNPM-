@@ -24,9 +24,9 @@
 .fListHeaderItems {
 	font-size: 25px;
 	margin-bottom: 13px;
-	color: palevioletred;
+	color: red;
 }
 .fcontainer {
 	width: 100%;
-	background-color: #003580;
+	background-color: #000000;
 }

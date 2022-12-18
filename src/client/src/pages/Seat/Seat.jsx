@@ -1,5 +1,5 @@
 import useFetch from "../../hooks/useFetch"
-import "./seat.css"
+import "./Seat.css"
 import React, {useContext, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import { useState } from "react";
@@ -9,9 +9,8 @@ import axios from "axios";
 const Seat = () => {
     const location = useLocation()
     const id = location.pathname.split("/")[2]
-
     const { data, loading, error } =  useFetch(`http://localhost:8000/api/movies/find/${id}`)
-    const [isload,setIsload] = useState(false)
+
 
     const count = document.getElementById('count');
     const total = document.getElementById('total');
@@ -24,10 +23,17 @@ const Seat = () => {
     const [adrs,seatAdrs] = useState([])
     const [time,setTime] = useState([])
     const [lseat,SetLseat] = useState([])
-    const [cinema,setCinema] = useState('chọn rạp')
-    const [gettime,setGettime] = useState('chọn giờ chiếu')
+    
     const { user } = useContext(AuthContext)
 
+    //==============================
+    const [movie_id,setMvid] = useState(undefined) 
+    const [customer_id,setCsid] = useState(undefined)
+    const [seat_number,setSeatnumber]  = useState(undefined)
+    const [cinema_complex,setCinema] = useState('chọn rạp')
+    const [movie_show_time,setGettime] = useState('chọn giờ chiếu')
+
+    //==============================
     function updateSelectedCount() {
       const selectedSeats = document.querySelectorAll('.row .seat.selected');
       const selectedSeatsCount = selectedSeats.length;
@@ -41,7 +47,7 @@ const Seat = () => {
       listseat.innerText = arrseat
     }
 
-    function setupSeat (){
+    function setupSeat () {
       setSeatbooking(data.booked_seats)
       for (let i in seatbooking){
         seat[seatbooking[i]+2].classList.toggle('occupied')
@@ -69,36 +75,9 @@ const Seat = () => {
       return d.toLocaleString('es-us')
     }
 
-    const createTicket = async (s,c,t,mid,uid) => {
-      const movie_id = mid
-      const customer_id =uid
-      const seat_number = s
-      const cinema_complex = c
-      const movie_show_time = t
-      const total_price = 90000
-      const createdAt = new Date()
-      const updatedAt = new Date()
-      try {
-        // console.log({firstName,lastName,username,email,password})
-        const res = await axios.post(`http://localhost:8000/api/tickets/${uid}`,{movie_id,customer_id,seat_number,cinema_complex,movie_show_time,total_price,createdAt,updatedAt})
-        console.log(res)
-
-      } catch (err) {
-        console.log(err)
-      }
+    const handlePayment = ()=>{
+      console.log(user._id)
     }
-
-    const handlePayment=()=>{
-      var splitted = listseat.textContent.split`,`.map(x=>+x)
-      SetLseat(splitted)
-      console.log(splitted)
-      console.log(cinema)
-      console.log(gettime)
-      for (let i in lseat){
-        createTicket(lseat[i],cinema,gettime,id,)
-      }
-    }
-
   //==================================================
   return (
     <section>
@@ -123,13 +102,13 @@ const Seat = () => {
           </li>    
         </ul>
 
-        <select value={cinema} onChange={e => setCinema(e.target.value)} className="cinema">
+        <select value={cinema_complex} onChange={e => setCinema(e.target.value)} className="cinema_complex">
           {adrs && adrs.map ((item,idx) => (
             <option  key={idx} value={item}> {item}</option>
           ))}
         </select>
 
-        <select value={gettime} onChange={e=>setGettime(e.target.value)} className="time">
+        <select value={movie_show_time} onChange={e=>setGettime(e.target.value)} className="time">
           {time && time.map ((item,idx) => (
             <option key={idx} value={item}> {setupTime(item)}</option>
           ))}

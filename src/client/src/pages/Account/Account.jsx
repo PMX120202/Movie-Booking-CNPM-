@@ -4,7 +4,21 @@ import './account.css'
 
 const Account = () => {
     const [page,setPage] = useState("1")
+    
     console.log(page)
+
+    // ==================== function =====================
+    function hideButtonSubmit(e){
+        // var checkBox = document.getElementById("conformsubmit");
+        var buttonSubmit = document.getElementById("btn-submit")
+
+        if (e == true){
+            buttonSubmit.style.display = "block";
+          } else {
+            buttonSubmit.style.display = "none";
+          }
+    }
+    //====================================================
     return (
     <div>
         <select value={page} onChange={e => setPage(e.target.value)} className="page">
@@ -24,6 +38,8 @@ const Account = () => {
                         <div className="format-profile">
                             <div className="my-profile">
                                 <div className="image-profile">
+                                    <label for="files">Select files:</label>
+                                    <input type="file" id="files" name="files" multiple/><br/><br/>
                                 </div>
                                 <div className="barcode-my">
                                     <div className="show-barcode-my"  >
@@ -229,9 +245,67 @@ const Account = () => {
         )}
 
         {page=== "4"?(
-            <div className="page3">
-                
+            <div className="ADmin-page">
+                <div className="add-movie">
+                    <div className="title-add-movie">
+                        <h2 className="title">Thêm phim sắp chiếu</h2>
+                    </div>
+                    <form>
+                        <ul>
+                            <li>
+                                <em>Tên phim</em>
+                                <input type="text" name='name' className='name' placeholder='nhập tên phim'/>
+                            </li>
+                            <li>
+                                <em>Thể loại</em>
+                                <input type="text" name='categories' className='categories' placeholder='nhập Thể loại'/>                                
+                            </li>
+                            <li>
+                                <em>Đạo diễn</em>
+                                <input type="text" name='author' className='author' placeholder='nhập tên Đạo diễn'/>                                
+                            </li>
+                            <li>
+                                <em>Mô tả chung</em>
+                                <input type="text" name='desc' className='desc' placeholder='nhập mô tả chung về phim'/>
+                            </li>
+                            <li>
+                                <em>Diễn viên đóng phim</em>
+                                <input type="text" name='cast' className='cast' placeholder='nhập tên các diễn viên'/>
+                            </li>
+                            <li>
+                                <em>Ngày ra mắt</em>
+                                <input type="datetime-local" className="dates" name="dates"  min="2022-01-01T00:00" max="2025-01-01T00:00"/>
+                            </li>
+                            <li>
+                                <em>Hình ảnh</em>
+                                <input type="url" name='photos' className='photos' placeholder='nhập đường dẫn ảnh'/>
+                            </li>
+                            <li>
+                                <em>Token trailer phim</em>
+                                <input type="text" name='trailer' className='trailer' placeholder='nhập token trailer'/>
+                            </li>
+                            <li>
+                                <em>Đánh giá</em>
+                                <input type="number" name='rate' className='rate' min={0} max={5} step={0.1}/>
+                            </li>
+                            <li>
+                                <em>Địa chỉ rạp chiếu</em>
+                                <input type="text" name='address' className='address' placeholder='nhập địa chỉ rạp chiếu'/>
+                            </li>
+                        </ul>
+                        <div>
+                            <input type="checkbox" name="conformsubmit" id='conformsubmit' onClick={e => hideButtonSubmit(e.target.checked)} />
+                            <e>Đồng ý thêm phim</e>
+                        </div> 
+                        <input type="button" value="Submit" id='btn-submit' style={{display : "none"}}/>
+                    </form>
+                </div>
+
+                <div className="delete-movie">
+
+                </div>
             </div>
+            
         ):(
             console.log("cc")
         )}
