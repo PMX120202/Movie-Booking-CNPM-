@@ -5,6 +5,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
+	const { user } = useContext(AuthContext);
+	console.log(user.username)
 	return (
 		<div className="navbar">
 			<div className="navContainer">
@@ -14,21 +16,25 @@ const Navbar = () => {
 				>
 					<span className="logo">NGU Cinema</span>
 				</Link>
-				<div className="navItems">
-					{/* <button className="navButton" style={{ color: "black" }}>
-						Register
-					</button>
-					<button className="navButton" style={{ color: "black" }}>
-						Login
-					</button> */}
 
-					<Link className="navButton" style={{ color: "black", backgroundColor: "white" }} to="/register">
-						Register
-					</Link>
-					<Link className="navButton" style={{ color: "black", backgroundColor: "white" }} to="/login">
-						Login
-					</Link>
-				</div>
+				{user ? user.username : (
+					<div className="navItems">
+						{/* <button className="navButton" style={{ color: "black" }}>
+							Register
+						</button>
+						<button className="navButton" style={{ color: "black" }}>
+							Login
+						</button> */}
+
+						<Link className="navButton" style={{ color: "black", backgroundColor: "white" }} to="/register">
+							Register
+						</Link>
+						<Link className="navButton" style={{ color: "black", backgroundColor: "white" }} to="/login">
+							Login
+						</Link>
+	
+					</div>
+				)}
 			</div>
 		</div>
 	);
