@@ -14,9 +14,19 @@ const Account = () => {
 
         if (e == true){
             buttonSubmit.style.display = "block";
-          } else {
+        } 
+        else {
             buttonSubmit.style.display = "none";
-          }
+        }
+    }
+    function hidenButtondelete(e){
+        var buttonDelete = document.getElementById("delete-btn-submit")
+
+        if (e == true){
+            buttonDelete.style.display = "block";
+        } else {
+            buttonDelete.style.display = "none";
+        }
     }
     //====================================================
     return (
@@ -302,7 +312,44 @@ const Account = () => {
                 </div>
 
                 <div className="delete-movie">
+                    <div className='delete-movie-title'>
+                        <h2>XÓA PHIM </h2>
+                    </div>
+                    <div className="choose-movie">
+                        <select className="movie-select">
+                            ,,,,,,,,,,,,,,,,,
+                        </select>
+                        
+                    </div>
+                    <div className="delete-submit">
+                        <div>
+                            <input type="checkbox" name="conform-delete-submit" id="conform-delete-submit" onClick={e=> hidenButtondelete(e.target.checked)}   />
+                            <e>Đồng ý xóa phim đã chọn</e>
+                        </div>
+                        <input type="button" value="Delete" id="delete-btn-submit" style={{display:'none'}}/>
+                    </div>
+                </div>
 
+                <div className="revenue">
+                    <div className="revenue-title">
+                        <h2>DOANH THU PHIM</h2>
+                    </div>
+
+                    <div className="revenue-movie">
+                        <div className="revenue-movie-name">
+                            <select name="movie-name-r" className='movie-name-r'>
+
+                            </select>
+
+                            <input type="button" value="next" id='button-movie-name-r'/>
+                        </div>
+
+                        <div className="revenue-info">
+                            
+                        </div>
+
+                        
+                    </div>
                 </div>
             </div>
             

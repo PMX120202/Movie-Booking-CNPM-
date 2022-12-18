@@ -1,8 +1,8 @@
 import "./movie.css";
 
 import Navbarz from "../../components/Navbar/Navbar";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 import MovieCard from "../../components/MovieCard/MovieCard";
 import useFetch from "../../hooks/useFetch";
 
