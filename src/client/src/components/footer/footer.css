@@ -1,32 +1,32 @@
-.footer{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    font-size: 12px;
+.footer {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	font-size: 12px;
 }
-.fLists{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+.fLists {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
 }
 
-.fList{
-    list-style: none;
-    padding: 0;
+.fList {
+	list-style: none;
+	padding: 0;
 }
-.fListItems{
-    margin-bottom: 10px;
-    font-size: 15px;
-    color: whitesmoke; 
-    cursor: pointer;
+.fListItems {
+	margin-bottom: 10px;
+	font-size: 15px;
+	color: whitesmoke;
+	cursor: pointer;
 }
-.fListHeaderItems{
-    font-size: 25px;
-    margin-bottom: 13px;
-    color: palevioletred;
+.fListHeaderItems {
+	font-size: 25px;
+	margin-bottom: 13px;
+	color: palevioletred;
 }
-.fcontainer{
-    width: 100%;
-    background-color: #003580;
+.fcontainer {
+	width: 100%;
+	background-color: #003580;
 }
