@@ -245,7 +245,6 @@ const Account = () => {
         )}
 
         {page=== "4"?(
-<<<<<<< Updated upstream
             <div className="ADmin-page">
                 <div className="add-movie">
                     <div className="title-add-movie">
@@ -304,78 +303,6 @@ const Account = () => {
 
                 <div className="delete-movie">
 
-=======
-            <div className="Admin-page">
-               
-                <div className="add-movie">
-                    <form>
-                        <label htmlFor="addmovie">THÊM PHIM</label>
-                        <div className="title-add-move">
-                            <ul>
-                                <li>
-                                    <em>Tên phim</em>
-                                    <input type="text" name="movie-name" className='movie-name' placeholder='nhập tên phim' />
-                                </li>
-
-                                <li>
-                                    <em>Thể loại </em>
-                                    <input type="text" name="categories" className='categories' placeholder='nhập thể loại phim' />
-                                </li>
-
-                                <li>
-                                    <em>Rạp chiếu phim</em>
-                                    <input type="text" name="cinema" className='cinema' placeholder='nhập địa chỉ rạp phim' />
-                                </li>
-
-                                <li>
-                                    <em>Hình ảnh</em>
-                                    <input type="text" name="cinema" className='cinema' placeholder='nhập link ảnh(type : https://www.... .png)' />
-                                </li>
-
-                                <li>
-                                    <em>Mô tả phim</em>
-                                    <input type="text" name='desc' className='desc' placeholder='nhập mô tả phim' />
-                                </li>
-
-                                <li>
-                                    <em>Đánh giá (../5)</em>
-                                    <input type="number" name='rate' className='rate' required min="0"  step="0.1" placeholder='nhập đánh giá' />
-                                </li>
-
-                                <li>
-                                    <em>Nhập ngày ra mắt</em>
-                                    <input type="datetime-local" className="meeting-time" name="meeting-time" value={new Date()} min="2018-01-01T00:00" max="2025-01-01T00:00"/>
-                                    {/*                                      
-                                    label {
-                                        display: block;
-                                        font: 1rem 'Fira Sans', sans-serif;
-                                    }
-
-                                    input,
-                                    label {
-                                        margin: .4rem 0;
-                                    } */}
-                                </li>
-
-                                <li>
-                                    <em>Token trailer</em>
-                                    <input type="text" name='token-trailer' className='token-trailer' placeholder='nhập token trailer' />
-                                </li>
-
-                                <li>
-                                    <em>Diễn viên đóng phim</em>
-                                    <input type="text" name='cast' className='cast' placeholder='nhập tên các diễn viên' />
-                                </li>
-                            </ul>
-
-                        </div>
-                    </form>
-                </div>
-                
-
-                <div className="delete-movie">
-                    
->>>>>>> Stashed changes
                 </div>
             </div>
             
