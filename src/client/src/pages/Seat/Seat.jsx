@@ -75,52 +75,9 @@ const Seat = () => {
       return d.toLocaleString('es-us')
     }
 
-<<<<<<< Updated upstream
-    const createTicket = async (s,c,t,mid,uid) => {
-      const movie_id = mid
-      const customer_id =uid
-      const seat_number = s
-      const cinema_complex = c
-      const movie_show_time = t
-      const total_price = 90000
-      const createdAt = new Date()
-      const updatedAt = new Date()
-      try {
-        // console.log({firstName,lastName,username,email,password})
-        const res = await axios.post(`http://localhost:8000/api/tickets/${uid}`,{movie_id,customer_id,seat_number,cinema_complex,movie_show_time,total_price,createdAt,updatedAt})
-        console.log(res)
-
-      } catch (err) {
-        console.log(err)
-      }
+    const handlePayment = ()=>{
+      console.log(user._id)
     }
-
-    const handlePayment=()=>{
-=======
-    const handlePayment = async (e) => {
-      e.preventDefault()
->>>>>>> Stashed changes
-      var splitted = listseat.textContent.split`,`.map(x=>+x)
-      SetLseat(splitted)
-      const total_price  = 90000
-      setMvid(id)
-      setCsid("id here")
-      for (let i in lseat){
-        
-        setSeatnumber(lseat[i])
-        const createdAt = new Date()
-        const updatedAt = new Date()
-        try {
-          const res = await axios.post(`http://localhost:8000/api/tickets/${customer_id}`,{movie_id,customer_id,seat_number,cinema_complex,movie_show_time,total_price,createdAt,updatedAt})
-          console.log(res)
-        } catch (err) {
-          console.log(err)
-        }
-      }
-    }
-
-  
-
   //==================================================
   return (
     <section>
