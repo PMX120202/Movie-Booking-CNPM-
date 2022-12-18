@@ -1,19 +1,16 @@
 import useFetch from "../../hooks/useFetch"
-import "./seat.css"
+import "./Seat.css"
 import React, {useContext, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import { useState } from "react";
 import { AuthContext } from '../../context/AuthContext'
 import axios from "axios";
-import Navbar from "../../components/Navbar/Navbar";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
 
 const Seat = () => {
     const location = useLocation()
     const id = location.pathname.split("/")[2]
     const { data, loading, error } =  useFetch(`http://localhost:8000/api/movies/find/${id}`)
-    const { user } = useContext(AuthContext)
+
 
     const count = document.getElementById('count');
     const total = document.getElementById('total');
@@ -27,7 +24,7 @@ const Seat = () => {
     const [time,setTime] = useState([])
     const [lseat,SetLseat] = useState([])
     
-    
+    const { user } = useContext(AuthContext)
 
     //==============================
     const [movie_id,setMvid] = useState(undefined) 
@@ -78,49 +75,47 @@ const Seat = () => {
       return d.toLocaleString('es-us')
     }
 
-    // const createTicket = async (s,c,t,mid,uid) => {
-    //   const movie_id = mid
-    //   const customer_id =uid
-    //   const seat_number = s
-    //   const cinema_complex = c
-    //   const movie_show_time = t
-    //   const total_price = 90000
-    //   const createdAt = new Date()
-    //   const updatedAt = new Date()
-    //   try {
-    //     // console.log({firstName,lastName,username,email,password})
-    //     const res = await axios.post(`http://localhost:8000/api/tickets/${uid}`,{movie_id,customer_id,seat_number,cinema_complex,movie_show_time,total_price,createdAt,updatedAt})
-    //     console.log(res)
+<<<<<<< Updated upstream
+    const createTicket = async (s,c,t,mid,uid) => {
+      const movie_id = mid
+      const customer_id =uid
+      const seat_number = s
+      const cinema_complex = c
+      const movie_show_time = t
+      const total_price = 90000
+      const createdAt = new Date()
+      const updatedAt = new Date()
+      try {
+        // console.log({firstName,lastName,username,email,password})
+        const res = await axios.post(`http://localhost:8000/api/tickets/${uid}`,{movie_id,customer_id,seat_number,cinema_complex,movie_show_time,total_price,createdAt,updatedAt})
+        console.log(res)
 
-    //   } catch (err) {
-    //     console.log(err)
-    //   }
-    // }
+      } catch (err) {
+        console.log(err)
+      }
+    }
 
-  
-    // const handlePayment = async (e) => {
-    //   e.preventDefault()
-    //   var splitted = listseat.textContent.split`,`.map(x=>+x)
-    //   SetLseat(splitted)
-    //   const total_price  = 90000
-    //   setMvid(id)
-    //   setCsid("id here")
-    //   console.log(user.username)
-    //   for (let i in lseat){
+    const handlePayment=()=>{
+=======
+    const handlePayment = async (e) => {
+      e.preventDefault()
+>>>>>>> Stashed changes
+      var splitted = listseat.textContent.split`,`.map(x=>+x)
+      SetLseat(splitted)
+      const total_price  = 90000
+      setMvid(id)
+      setCsid("id here")
+      for (let i in lseat){
         
-    //     setSeatnumber(lseat[i])
-    //     const createdAt = new Date()
-    //     const updatedAt = new Date()
-    //     try {
-    //       const res = await axios.post(`http://localhost:8000/api/tickets/${customer_id}`,{movie_id,customer_id,seat_number,cinema_complex,movie_show_time,total_price,createdAt,updatedAt})
-    //       console.log(res)
-    //     } catch (err) {
-    //       console.log(err)
-    //     }
-    //   }
-    const handlePayment =()=>{
-      if (user) {
-      console.log(user._id)
+        setSeatnumber(lseat[i])
+        const createdAt = new Date()
+        const updatedAt = new Date()
+        try {
+          const res = await axios.post(`http://localhost:8000/api/tickets/${customer_id}`,{movie_id,customer_id,seat_number,cinema_complex,movie_show_time,total_price,createdAt,updatedAt})
+          console.log(res)
+        } catch (err) {
+          console.log(err)
+        }
       }
     }
 
@@ -129,12 +124,9 @@ const Seat = () => {
   //==================================================
   return (
     <section>
-    <Navbar/>
-    <Header/>
     {loading ? (
       console.log("loading api")
     ) : (
-
       <div className="movie-container"  >
         <label htmlFor="moviename">{data.name}</label>
         
@@ -240,10 +232,8 @@ const Seat = () => {
         </div>
       </div>
       )}
-      <Footer/>
     </section>
     )
-  }
-
+}
 
 export default Seat

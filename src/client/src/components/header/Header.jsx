@@ -11,10 +11,10 @@ const Header = () => {
 						<span>
 							<Link
 								className="btn"
-								to="/Movie/MovieShowing"
-								style={{ color: "white" }}
+								to="/Movie"
+								style={{ color: "red" }}
 							>
-								BUY TICKETS
+								Buy Tickets
 							</Link>
 						</span>
 					</div>

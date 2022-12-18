@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "./ytbEmbed.css"
+import "./YtbEmbed.css"
 
 const YtbEmbed = ({ embedId }) => (
   <div className="video-responsive">

@@ -1,7 +1,7 @@
 .navbar {
     height: 50px;
     width: 100%;
-    background-color: #003580;
+    background-color: #000000;
     display: flex;
     justify-content: center;
 }
@@ -9,7 +9,7 @@
 .navContainer{
     width: 100%;
     /* max-width: 1024px; */
-    color: white;
+    color: aliceblue;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -28,4 +28,8 @@
     cursor: pointer;
     color: white;
     text-decoration: none;
+}
+
+.navContainer span {
+    color: red;
 }
