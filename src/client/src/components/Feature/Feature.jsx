@@ -1,5 +1,5 @@
 // import { Swiper, SwiperSlide } from "swiper/react";
-import "./feature.css";
+import "./Feature.css";
 // import { Autoplay, Pagination, Navigation } from "swiper";
 
 // // Import Swiper styles

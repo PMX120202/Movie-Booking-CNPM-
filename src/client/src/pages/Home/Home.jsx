@@ -1,7 +1,7 @@
 // import React, { useState } from "react"
 import Feature from "../../components/Feature/Feature";
-import Footer from "../../components/footer/Footer";
-import Header from "../../components/header/Header";
+import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
 import Navbar from "../../components/Navbar/Navbar";
 
 // import Slider from "react-slick"
@@ -10,7 +10,7 @@ import Navbar from "../../components/Navbar/Navbar";
 // import { homeData } from "../../data"
 
 
-import "./home.css";
+import "./Home.css";
 
 // const SampleNextArrow = (props) => {
 // 	const { onClick } = props
@@ -50,7 +50,7 @@ const Home = () => {
 		<div className="home">
 			<Navbar />
 			<Header />
-			<Feature/>
+			{/* <Feature/> */}
 			{/* <div className="homeContainer">
 				
 				<Slider {...settings}>

@@ -1,9 +1,9 @@
-import Footer from "../../components/footer/Footer";
-import Header from "../../components/header/Header";
+import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
 import YtbEmbed from "../../components/YtbEmbed/YtbEmbed";
 import Navbar from "../../components/Navbar/Navbar";
 
-import "./movieContent.css";
+import "./MovieContent.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import axios from "axios";

@@ -1,12 +1,12 @@
 import useFetch from "../../hooks/useFetch"
-import "./seat.css"
+import "./Seat.css"
 import React, {useContext, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import { useState } from "react";
 import { AuthContext } from '../../context/AuthContext'
 import axios from "axios";
 import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/footer/Footer";
+import Footer from "../../components/Footer/Footer";
 
 const Seat = () => {
     const location = useLocation()
