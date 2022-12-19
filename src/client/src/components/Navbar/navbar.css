@@ -1,7 +1,6 @@
 
 .navbar-container {
-    height: 50px;
-    padding: 0.5em;
+    height: 70px;
     width: 100%;
     background-color: #444451;
     display: flex;
@@ -9,6 +8,7 @@
 }
 
 .navbar{
+    height: 100%;
     width: 80%;
     max-width: 1024px;
     color: white;
@@ -17,11 +17,14 @@
     justify-content: space-between;
 }
 
-/* .logo {
-    font-size: 2rem;
-    color: aliceblue;
-    text-decoration: none;
-} */
+.logo-user img{
+    vertical-align: middle;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin: 0;
+}
 
 
 .navButton{

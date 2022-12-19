@@ -77,9 +77,22 @@ const Seat = () => {
       return d.toLocaleString('es-us')
     }
 
-    const handlePayment = ()=>{
-      console.log(user._id)
-    }
+    const handlePayment = async (e) => {
+      e.preventDefault();
+
+      if (user) {
+        setCsid(user._id)
+        
+        try {
+          const res = await axios.post(`http://localhost:8000/api/tickets/${movie_id}`,{movie_id,customer_id,seat_number,cinema_complex,movie_show_time});
+          console.log(res);
+        } catch (err) {
+          console.log(err);
+
+        }
+      }
+      
+    };
   //==================================================
   return (
     <section>

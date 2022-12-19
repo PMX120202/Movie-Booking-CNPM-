@@ -26,7 +26,7 @@ const Navbar = () => {
 				{user ? (
 					<div className="logo-user">
 						<Link to="/account"> 
-						<span>{user.username}</span>  
+						<img  src="https://www.redditstatic.com/avatars/avatar_default_01_A5A4A4.png" alt="" />
 						</Link>
 					</div>
 				) : (

@@ -3,7 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import NavbarSecond from "../../components/Navbar/NavbarSecond";
-import Header from "../../components/Header/Header";
+import Header from "../../components/header/Header";
 
 const Register = () => {
 	const [firstName, setFirstName] = useState(undefined);
