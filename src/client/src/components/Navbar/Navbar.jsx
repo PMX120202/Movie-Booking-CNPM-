@@ -8,8 +8,8 @@ const Navbar = () => {
 	const { user } = useContext(AuthContext);
 	console.log(user.username)
 	return (
-		<div className="navbar">
-			<div className="navContainer">
+		<div className="navbar-container">
+			<div className="navbar">
 				<Link
 					to="/"
 					style={{ color: "inherit", textDecoration: "none" }}
@@ -17,7 +17,13 @@ const Navbar = () => {
 					<span className="logo">NGU Cinema</span>
 				</Link>
 
-				{user ? user.username : (
+				{user ? (
+					<div className="logo-user">
+						<Link to="/account"> 
+						<span>{user.username}</span>  
+						</Link>
+					</div>
+				) : (
 					<div className="navItems">
 						{/* <button className="navButton" style={{ color: "black" }}>
 							Register

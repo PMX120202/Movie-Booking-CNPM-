@@ -1,15 +1,16 @@
-.navbar {
+
+.navbar-container {
     height: 50px;
     width: 100%;
-    background-color: #000000;
+    background-color: #444451;
     display: flex;
     justify-content: center;
 }
 
-.navContainer{
-    width: 100%;
-    /* max-width: 1024px; */
-    color: aliceblue;
+.navbar{
+    width: 80%;
+    max-width: 1024px;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;

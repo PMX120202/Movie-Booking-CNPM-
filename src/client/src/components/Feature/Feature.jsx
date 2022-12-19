@@ -1,16 +1,17 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+// import { Swiper, SwiperSlide } from "swiper/react";
 import "./feature.css";
-import { Autoplay, Pagination, Navigation } from "swiper";
+// import { Autoplay, Pagination, Navigation } from "swiper";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+// // Import Swiper styles
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
 
 const Feature = () => {
 	return (
 		<div className="feature">
-			<section className="popupar container_f" id="popular">
+			feature
+			{/* <section className="popupar container_f" id="popular">
 				<div className="heading">
 					<h2 className="heading-title">Popular Movies</h2>
 				</div>
@@ -40,7 +41,7 @@ const Feature = () => {
 						<SwiperSlide>Slide 9</SwiperSlide>
 					</Swiper>
 				</div>
-			</section>
+			</section> */}
 		</div>
 	);
 };

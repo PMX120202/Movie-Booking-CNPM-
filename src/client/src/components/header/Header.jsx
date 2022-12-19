@@ -3,33 +3,17 @@ import { Link } from "react-router-dom";
 import "./header.css";
 
 const Header = () => {
+	const handleButton= e =>{
+		
+	}
 	return (
-		<div className="header">
-			<div className="headerContainer">
+		<div className="header-container">
+			<div className="header">
 				<div className="headerList">
-					<div className="headerListItems active">
-						<span>
-							<Link
-								className="btn"
-								to="/Movie"
-								style={{ color: "red" }}
-							>
-								Buy Tickets
-							</Link>
-						</span>
-					</div>
-
-					<div className="headerListItems">
-						<span>Movie</span>
-					</div>
-
-					<div className="headerListItems">
-						<span>Promotion</span>
-					</div>
-
-					<div className="headerListItems">
-						<span>Cinema</span>
-					</div>
+					<input type="button" value="phim" className="bnt-header" onClick={e => handleButton(e.target.value)}/>
+					<input type="button" value="mua vé" className="bnt-header" onClick={e => handleButton(e.target.value)}/>
+					<input type="button" value="Tin tức mới" className="bnt-header" onClick={e => handleButton(e.target.value)}/>
+					
 				</div>
 			</div>
 		</div>

@@ -1,10 +1,12 @@
 import useFetch from "../../hooks/useFetch"
-import "./Seat.css"
+import "./seat.css"
 import React, {useContext, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import { useState } from "react";
 import { AuthContext } from '../../context/AuthContext'
 import axios from "axios";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/footer/Footer";
 
 const Seat = () => {
     const location = useLocation()
@@ -81,6 +83,8 @@ const Seat = () => {
   //==================================================
   return (
     <section>
+      <Navbar/>
+
     {loading ? (
       console.log("loading api")
     ) : (
@@ -189,6 +193,7 @@ const Seat = () => {
         </div>
       </div>
       )}
+      <Footer/>
     </section>
     )
 }
