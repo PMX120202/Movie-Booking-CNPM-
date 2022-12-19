@@ -1,6 +1,7 @@
 
 .navbar-container {
     height: 50px;
+    padding: 0.5em;
     width: 100%;
     background-color: #444451;
     display: flex;
@@ -16,11 +17,12 @@
     justify-content: space-between;
 }
 
-.logo{
-    font-size: larger;
+/* .logo {
+    font-size: 2rem;
     color: aliceblue;
     text-decoration: none;
-}
+} */
+
 
 .navButton{
     margin-left: 20px;

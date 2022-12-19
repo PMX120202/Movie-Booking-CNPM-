@@ -12,10 +12,9 @@
 .header {
 	width: 100%;
 	max-width: 1024px;
-	margin: 20px 8px 100px 0px;
+	margin: 10px 0px 10px 0px;
 }
 .headerList {
 	display: flex;
 	gap: 60px;
 }
-

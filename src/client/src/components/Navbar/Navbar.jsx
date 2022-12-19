@@ -6,7 +6,7 @@ import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
 	const { user } = useContext(AuthContext);
-	console.log(user.username)
+	console.log(user.username);
 	return (
 		<div className="navbar-container">
 			<div className="navbar">
@@ -14,7 +14,13 @@ const Navbar = () => {
 					to="/"
 					style={{ color: "inherit", textDecoration: "none" }}
 				>
-					<span className="logo">NGU Cinema</span>
+					{/* <span className="logo">Fox Cinema</span> */}
+					<img
+						src={process.env.PUBLIC_URL + "/icon.png"}
+						alt="Logo"
+						width="200px"
+						class="logo"
+					/>
 				</Link>
 
 				{user ? (

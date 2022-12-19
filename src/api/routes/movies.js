@@ -11,19 +11,19 @@ const { verifyAdmin } = require("../utils/verify.js");
 
 const router = express.Router();
 
-//CREATE
+// Create a new movie
 router.post("/", verifyAdmin, createMovie);
 
-//UPDATE
+// Update a movie
 router.put("/:id", verifyAdmin, updateMovie);
 
-//DELETE
+// Delete a movie
 router.delete("/:id", verifyAdmin, deleteMovie);
 
-//GET
+// Get a movie
 router.get("/find/:id", getMovie);
 
-//GET ALL
+// get all movies
 router.get("/", getAllMovies);
 
 // // // router.get("/countByCity", countByCity);

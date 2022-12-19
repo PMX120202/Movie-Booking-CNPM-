@@ -1,13 +1,13 @@
 import { AuthContext } from "../../context/AuthContext";
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import NavbarSecond from "../../components/Navbar/NavbarSecond";
+import Header from "../../components/Header/Header"
 import "./login.css";
 import axios from "axios";
 
 const Login = () => {
 	const [credentials, setCredentials] = useState({
-		// username: "ngu123",
-		// password: "12345",
 		username: "",
 		password: "",
 	});
@@ -44,20 +44,19 @@ const Login = () => {
 	};
 
 	return (
-		<>
+		<div>
+			<NavbarSecond />
+			<Header />
 			<div className="auth-form-container">
 				<h2>Login</h2>
-				<form className="login-form">
+				<form className="login-form border-1">
 					<input
-						// type="email"
-						// id="email"
-						// name="email"
 						type="text"
 						id="username"
 						name="username"
 						onChange={handleChange}
 						placeholder="Username"
-						className="form-control my-2"
+						className="form-control"
 					/>
 					<input
 						type="password"
@@ -65,23 +64,23 @@ const Login = () => {
 						ame="password"
 						onChange={handleChange}
 						placeholder="Password"
-						className="form-control my-2"
+						className="form-control my-3"
 					/>
 					<button
 						disabled={loading}
 						onClick={handleClick}
 						type="submit"
-						className="btn btn-light my-2"
+						className="btn btn-primary"
 					>
 						Log In
 					</button>
 					{error && <span>{error.message}</span>}
 				</form>
-				<Link className="link-btn text-light my-2" to="/register">
+				<Link className="text-primary my-3" to="/register">
 					Don't have an account? Register here.
 				</Link>
 			</div>
-		</>
+		</div>
 	);
 };
 

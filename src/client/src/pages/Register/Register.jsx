@@ -2,6 +2,9 @@ import "./register.css";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import NavbarSecond from "../../components/Navbar/NavbarSecond";
+import Header from "../../components/Header/Header";
+
 const Register = () => {
 	const [firstName, setFirstName] = useState(undefined);
 	const [lastName, setLastName] = useState(undefined);
@@ -26,7 +29,7 @@ const Register = () => {
 		}
 	};
 	return (
-		<>
+		<div>
 			{success ? (
 				<section>
 					<h1>Success!</h1>
@@ -35,64 +38,75 @@ const Register = () => {
 					</p>
 				</section>
 			) : (
-				<div className="over">
-					<h2 className="Title">Sign Up</h2>
-					<form>
-						<input
-							type="text"
-							id="firstName"
-							name="firstName"
-							onChange={(e) => setFirstName(e.target.value)}
-							placeholder="First Name"
-						/>
-						<p></p>
-						<input
-							type="text"
-							id="lastName"
-							name="lastName"
-							onChange={(e) => setLastName(e.target.value)}
-							placeholder="Last Name"
-						/>
-						<p></p>
-						<input
-							type="text"
-							id="username"
-							name="username"
-							onChange={(e) => setusername(e.target.value)}
-							placeholder="Username"
-						/>
-						<p></p>
-						<input
-							type="email"
-							id="email"
-							name="email"
-							onChange={(e) => setEmail(e.target.value)}
-							placeholder="Email"
-						/>
-						<p></p>
-						<input
-							type="password"
-							id="password"
-							name="password"
-							onChange={(e) => setPassword(e.target.value)}
-							placeholder="Password"
-						/>
-						<p></p>
-						<input
-							type="password"
-							id="confirm-password"
-							name="confirm-password"
-							onChange={(e) => setConfirmPwd(e.target.value)}
-							placeholder="Confirm password"
-						/>
-						<p></p>
-						<button onClick={handleSubmit} className="btn">
-							Submit
-						</button>
-					</form>
+				<div>
+					<NavbarSecond />
+					<Header />
+					<div className="sign-up-form">
+						<h2 className="Title">Sign Up</h2>
+						<form>
+							<p></p>
+							<input
+								type="text"
+								id="firstName"
+								name="firstName"
+								onChange={(e) => setFirstName(e.target.value)}
+								placeholder="First Name"
+								className="form-control"
+							/>
+							<p></p>
+							<input
+								type="text"
+								id="lastName"
+								name="lastName"
+								onChange={(e) => setLastName(e.target.value)}
+								placeholder="Last Name"
+								className="form-control required"
+							/>
+							<p></p>
+							<input
+								type="text"
+								id="username"
+								name="username"
+								onChange={(e) => setusername(e.target.value)}
+								placeholder="Username"
+								className="form-control"
+							/>
+							<p></p>
+							<input
+								type="email"
+								id="email"
+								name="email"
+								onChange={(e) => setEmail(e.target.value)}
+								placeholder="Email"
+								className="form-control"
+							/>
+							<p></p>
+							<input
+								type="password"
+								id="password"
+								name="password"
+								onChange={(e) => setPassword(e.target.value)}
+								placeholder="Password"
+								className="form-control"
+							/>
+							<p></p>
+							<input
+								type="password"
+								id="confirm-password"
+								name="confirm-password"
+								onChange={(e) => setConfirmPwd(e.target.value)}
+								placeholder="Confirm password"
+								className="form-control"
+							/>
+							<p></p>
+							<button onClick={handleSubmit} className="btn btn-primary">
+								Submit
+							</button>
+						</form>
+					</div>
 				</div>
 			)}
-		</>
+		</div>
 	);
 };
 
